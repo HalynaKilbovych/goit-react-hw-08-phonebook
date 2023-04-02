@@ -1,7 +1,6 @@
 import axios from "axios";
 import { createAsyncThunk } from "@reduxjs/toolkit";
-
-axios.defaults.baseURL =  'https://642352c477e7062b3e2ff7d9.mockapi.io';
+import { notificationError } from "utils/Notifacation/Notifacation";
 
 export const fetchContacts = createAsyncThunk(
     'contacts/fetchAll',
@@ -9,7 +8,7 @@ export const fetchContacts = createAsyncThunk(
       try {
         const response = await axios.get('/contacts');
         if (response.data.length === 0) {
-          console.log("no result");
+          notificationError(); 
         }
         return response.data;
       } catch (error) {

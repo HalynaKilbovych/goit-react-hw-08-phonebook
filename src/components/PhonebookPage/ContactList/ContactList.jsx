@@ -1,10 +1,10 @@
 import { List, Item, DeleteButton } from './ContactList.styled';
 import { useSelector, useDispatch} from 'react-redux';
 import { useEffect } from 'react';
-import { deleteContact, fetchContacts } from 'redux/contact/operations';
-import { selectContacts, selectError, selectFilter,selectIsLoading } from 'redux/contact/selectors';
-import { notificationNoContact, notificationError } from 'components/Notifacation/Notifacation';
-import { Loader } from "components/Loader/Loader";
+import { deleteContact, fetchContacts } from 'redux/contacts/operations';
+import { selectContacts, selectError, selectFilter,selectIsLoading } from 'redux/contacts/selectors';
+import { notificationNoContact, notificationError} from 'utils/Notifacation/Notifacation';
+import { Loader } from 'utils/Loader/Loader';
 
 export const ContactList = () => {
   const dispatch = useDispatch();
