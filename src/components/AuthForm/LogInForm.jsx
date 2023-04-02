@@ -2,23 +2,15 @@ import * as React from 'react';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { useDispatch } from 'react-redux';
 import { logIn } from 'redux/auth/operations';
+import { StyledLink } from './Form.styled';
 
 export default function LogInForm() {
-  // const handleSubmit = (event) => {
-  //   event.preventDefault();
-  //   const data = new FormData(event.currentTarget);
-  //   console.log({
-  //     email: data.get('email'),
-  //     password: data.get('password'),
-  //   });
-  // };
 
   const dispatch = useDispatch();
 
@@ -83,13 +75,7 @@ export default function LogInForm() {
             >
               Log In
             </Button>
-            <Grid container justifyContent="flex-end">
-              <Grid item>
-                <Link href="#" variant="body2">
-                You don't have an account? Register
-                </Link>
-              </Grid>
-            </Grid>
+            <StyledLink to="/register">You don't have an account? Register</StyledLink>
           </Box>
         </Box>
       </Container>

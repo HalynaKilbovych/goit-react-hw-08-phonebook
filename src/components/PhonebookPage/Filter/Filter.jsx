@@ -1,9 +1,11 @@
 import React from 'react';
-import { FilterWrapper, Label, Input } from './Filter.styled';
+import { FilterWrapper} from './Filter.styled';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectFilter } from 'redux/contacts/selectors';
 import { setFilterValue } from 'redux/contacts/filterSlice';
-
+import TextField from '@mui/material/TextField';
+import SearchIcon from '@mui/icons-material/Search';
+import InputAdornment from '@mui/material/InputAdornment';
 
 export function Filter() {
   const dispatch = useDispatch();
@@ -14,10 +16,21 @@ export function Filter() {
   };
   return (
   <FilterWrapper>
-    <Label>
-      Find name
-      <Input type="text" value={filterValue} onChange={onChange} placeholder=" " />
-    </Label>
+    <TextField
+        value={filterValue} 
+        onChange={onChange} 
+        placeholder=" "
+        id="input-with-icon-textfield"
+        label="Find contact by name"
+        InputProps={{
+          startAdornment: (
+            <InputAdornment position="start">
+              <SearchIcon />
+            </InputAdornment>
+          ),
+        }}
+        variant="standard"
+      />
   </FilterWrapper>
   );
 }

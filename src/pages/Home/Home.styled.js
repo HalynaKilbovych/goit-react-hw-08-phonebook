@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
-const HomeSection = styled.section`
+export const HomeSection = styled.section`
   padding: 36px 0;
   background-color: #fce86d;
 `;
 
-const Container = styled.div`
+export const Container = styled.div`
   padding-left: 20px;
   padding-right: 20px;
   padding-top: 120px;
@@ -24,7 +24,7 @@ const Container = styled.div`
   }
 `;
 
-const Wrapper = styled.div`
+export const Wrapper = styled.div`
   display: flex;
   flex-direction: column-reverse;
   text-align: center;
@@ -70,7 +70,7 @@ const Wrapper = styled.div`
   }
 `;
 
-const StyledLink = styled(NavLink)`
+export const StyledLink = styled(NavLink)`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -92,5 +92,3 @@ const StyledLink = styled(NavLink)`
     margin: 0;
   }
 `;
-
-export { HomeSection, Container, Wrapper, StyledLink };

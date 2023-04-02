@@ -2,7 +2,7 @@ import * as React from 'react';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-import Link from '@mui/material/Link';
+import { StyledLink } from './Form.styled';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
@@ -26,7 +26,6 @@ export function RegisterForm() {
         password: form.elements.password.value,
       })
     );
-    console.log(form.elements.name.value);
     form.reset();
   };
 
@@ -99,13 +98,7 @@ export function RegisterForm() {
               >
                 Register
               </Button>
-              <Grid container>
-                <Grid item>
-                  <Link href="#" variant="body2">
-                    {"Already have an account? Log In"}
-                  </Link>
-                </Grid>
-              </Grid>
+              <StyledLink to="/login">You have an account? Log In</StyledLink>
             </Box>
           </Box>
         </Grid>

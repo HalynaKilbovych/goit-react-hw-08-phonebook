@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { nanoid } from "nanoid";
-import { Form, Label, Input, Button } from "./ContactForm.styled";
+import { Form, Button } from "./ContactForm.styled";
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/contacts/operations';
 import { selectContacts } from 'redux/contacts/selectors';
 import { notificationSameName, notificationSameNumber } from 'utils/Notifacation/Notifacation';
+import { TextField } from '@mui/material';
 
 export const ContactForm = () => {
   const [name, setName] = useState('');
@@ -41,7 +41,7 @@ export const ContactForm = () => {
       notificationSameNumber(number);
       return;
     } else {
-      dispatch(addContact({ name, phone: number, id: nanoid() }));
+      dispatch(addContact({ name, number}));
       resetForm();
     }
   };
@@ -53,10 +53,11 @@ export const ContactForm = () => {
 
   return (
     <Form onSubmit={handleSubmitForm}>
-      <Label>
-        Name
-        <Input
-          value={name}
+      <TextField  sx={{ width: '70ch' }}
+        id="outlined-basic" 
+        label="Name" 
+        variant="outlined" 
+        value={name}
           onChange={handleChange}
           type="text"
           name="name"
@@ -64,11 +65,11 @@ export const ContactForm = () => {
           title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
           required
         />
-      </Label>
-      <Label htmlFor="">
-        Number
-        <Input
-          value={number}
+      <TextField  sx={{ width: '70ch' }}
+        id="outlined-basic" 
+        label="Number" 
+        variant="outlined" 
+        value={number}
           onChange={handleChange}
           type="tel"
           name="number"
@@ -76,7 +77,6 @@ export const ContactForm = () => {
           title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
           required
         />
-      </Label>
       <Button type="submit">Add contact</Button>
     </Form>
   );

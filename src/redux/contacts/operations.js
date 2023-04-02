@@ -1,15 +1,11 @@
 import axios from "axios";
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { notificationError } from "utils/Notifacation/Notifacation";
 
 export const fetchContacts = createAsyncThunk(
     'contacts/fetchAll',
     async (_, { rejectWithValue }) => {
       try {
         const response = await axios.get('/contacts');
-        if (response.data.length === 0) {
-          notificationError(); 
-        }
         return response.data;
       } catch (error) {
         return rejectWithValue(error.message);
@@ -19,9 +15,9 @@ export const fetchContacts = createAsyncThunk(
   
   export const addContact = createAsyncThunk(
     'contacts/addContact',
-    async ({ name, phone }, { rejectWithValue }) => {
+    async ({ name, number }, { rejectWithValue }) => {
       try {
-        const response = await axios.post('/contacts', { name, phone });
+        const response = await axios.post('/contacts', { name, number });
         return response.data;
       } catch (error) {
         return rejectWithValue(error.message);

@@ -7,7 +7,6 @@ export const Form = styled.form`
     align-items: center;
     gap: 20px;
     padding: 20px;
-    background-color: white;
     margin-bottom: 50px; 
 `
 
@@ -23,13 +22,48 @@ export const Input = styled.input`
     padding: 5px;
 `
 export const Button = styled.button`
-    width: 100%;
-    background-color: darkcyan;
-    padding: 10px;
-    color: white;
-    border: none;
-    transition: transform 300ms ease-in-out;
-    &:hover { 
-        transform: scale(1.1);
-    }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 50px;
+  margin: 0 auto;
+  color: #ffffff;
+  border: none;
+  background-color: #1976d2;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover,
+  &:focus {
+    color: #fefefe;
+    background-color: #000cff;
+  }
+  @media screen and (min-width: 1200px) {
+    margin: 0;
+  }
 `
+
+// export const StyledLink = styled(NavLink)`
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   width: 160px;
+//   height: 60px;
+//   margin: 0 auto;
+//   color: #ffffff;
+//   background-color: #1976d2;
+//   border-radius: 10px;
+//   text-decoration: none;
+//   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+//     background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+//   &:hover,
+//   &:focus {
+//     color: #fefefe;
+//     background-color: #000cff;
+//   }
+//   @media screen and (min-width: 1200px) {
+//     margin: 0;
+//   }
+// `;

@@ -5,8 +5,6 @@ export const FilterWrapper = styled.div`
     padding: 20px;
     align-items: center;
     justify-content: center;
-    background-color: white;
-    
 `;
 
 export const Label = styled.label`

@@ -4,8 +4,8 @@ export const Wrapper = styled.div`
     max-width: 50%;
     margin-left: auto;
     margin-right: auto;
-    padding: 20px;
-    background-color: paleturquoise;
+    padding: 70px;
+    background-color: rgb(252, 232, 109);;
 `
 
 export const Title = styled.h1`
